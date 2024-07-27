@@ -26,9 +26,9 @@ namespace GlobalHotKeysRX
             this.modifier = modificador;
             this.key = tecla;
         }
-        public Combo( Modifiers modificador, Modifiers modificador2, Key tecla )
+        public Combo( Modifiers modificador1, Modifiers modificador2, Key tecla )
         {
-            this.modifier = modificador | modificador2;
+            this.modifier = modificador1 | modificador2;
             this.key = tecla;
         }
     }
