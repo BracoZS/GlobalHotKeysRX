@@ -56,9 +56,9 @@ namespace GlobalHotKeysRX
         }
         private int getID( Combo c )
         {
-            return (int)c.modifier + (int)c.key;     // + 12345?
+            return (int)c.modifier + (int)c.key;     
         }
-        public bool AñadirMetodo(Combo combo, Action action)       //implement exception by using this return
+        public bool AñadirMetodo(Combo combo, Action action)       //implement at exception...
         {
             var id = getID(combo);
             var vKeyCode = KeyInterop.VirtualKeyFromKey(combo.key);
@@ -91,7 +91,7 @@ namespace GlobalHotKeysRX
             if ( !handled && msg.message == WM_HOTKEY )
             {
                 var id = msg.wParam.ToInt32();
-                _metodos[id]?.Invoke();     //cuidado con el null                    //:)!!!!!!
+                _metodos[id]?.Invoke();     
 
                 handled = true;
             }
