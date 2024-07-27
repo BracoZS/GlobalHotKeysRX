@@ -43,4 +43,4 @@ simplest way
 ```
 ### Known issues
 
-It does not work with some known Windows shortcuts like 'alt + tab' or 'win + e'.
+It does not work overwriting some known Windows shortcuts like 'alt + tab' or 'win + e'.
