@@ -52,13 +52,13 @@ namespace GlobalHotKeysRX
         }
         public Atajos( Combo c, Action a ):this()     // - :this() - !important
         {
-            AñadirMetodo(c, a);
+            AÃ±adirMetodo(c, a);
         }
         private int getID( Combo c )
         {
             return (int)c.modifier + (int)c.key;     // + 12345?
         }
-        public bool AñadirMetodo(Combo combo, Action action)       //implement exception by using this return
+        public bool AÃ±adirMetodo(Combo combo, Action action)       //implement exception by using this return
         {
             var id = getID(combo);
             var vKeyCode = KeyInterop.VirtualKeyFromKey(combo.key);
@@ -118,8 +118,6 @@ namespace GlobalHotKeysRX
             }
         }
         #endregion
-
     }
-
-
+    
 }
