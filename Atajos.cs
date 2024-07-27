@@ -58,7 +58,7 @@ namespace GlobalHotKeysRX
         {
             return (int)c.modifier + (int)c.key;     
         }
-        public bool AñadirMetodo(Combo combo, Action action)       //implement at exception...
+        public bool AñadirMetodo(Combo combo, Action action)       //implement exception...
         {
             var id = getID(combo);
             var vKeyCode = KeyInterop.VirtualKeyFromKey(combo.key);
