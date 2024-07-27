@@ -9,7 +9,8 @@ using GlobalHotKeysRX;
 
 initialization
 ```
-  Combo combo1 = new Combo(Modifiers.Alt, Key.C);
+  Combo combo1 = new Combo(Modifiers.Alt, Key.C);                          //dual combo
+  Combo combo2 = new Combo(Modifiers.Alt | Modifiers.Control, Key.Z);      //triple combo
 
   Atajos hotkeys = new Atajos();
 ```
