@@ -7,7 +7,7 @@ A WPF C# library to create global keyboard shortcuts.
 using GlobalHotKeysRX;
 ```
 
-...initialization...
+initialization
 ```
   Combo combo1 = new Combo(Modifiers.Alt, Key.C);
 
