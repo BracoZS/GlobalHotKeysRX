@@ -1,7 +1,8 @@
 
+using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
-
 using System.Windows.Input;
 
 namespace GlobalHotKeysRX
