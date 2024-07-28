@@ -6,11 +6,11 @@ Works globally, allowing the activation of shortcuts on any window.
 
 Supports combinations of:
 
--Modifier keys: Alt, Control, Shift, Win (Up to 3 at the same time).
+-Modifier keys: Alt, Control, Shift, Win (Up to 3 at the same time)
 
 -WPF Keys, listed at [System.Windows.Input  Key Enum](https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.key?view=windowsdesktop-8.0).
 
-- :construction_worker::construction: WIP
+
 ## Sample usage
 import
 ```
@@ -24,8 +24,9 @@ initialization
 
   HotKeys hks = new HotKeys();
 ```
-> *Use the | operator to combine/add modifiers
-
+> Use the  |  operator to combine/add modifiers.
+> 
+> By using 'Modifiers.NoRepeat' with another modifier, the application will only receive another WM_HOTKEY message when the key is released and then pressed again while a modifier is held down.
 
 adding a hotkey
 ```
