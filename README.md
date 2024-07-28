@@ -1,8 +1,8 @@
 # GlobalHotKeysRX
-A small C# WPF library to create global keyboard shortcuts. It allows you to implement keyboard shortcuts globally in your applications. With this library, you can implement keyboard shortcuts to perform specific actions in your applications, regardless of the active window.
+A small C# WPF library to create global keyboard shortcuts. With this library, you can implement keyboard shortcuts to perform specific actions in your applications, regardless of the active window.
 Works globally, allowing the activation of shortcuts on any window.
 
-*No Window is required, so you can use it in windowless applications.
+*No Window is required, so you can use it in background/windowless applications.
 
 Supports combinations of:
 
@@ -46,4 +46,4 @@ simplest way
 ```
 ### Known issues
 
-It doesn't work overwriting some known Windows shortcuts like 'alt + tab' or 'win + e'.
+This library uses Win32 API. Typically, [RegisterHotKey](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerhotkey) fails if the keystrokes specified for the hot key have already been registered for another hot key. However, some pre-existing, default hotkeys registered by the OS (such as PrintScreen, which launches the Snipping tool) may be overridden by another hot key registration when one of the app's windows is in the foreground.
