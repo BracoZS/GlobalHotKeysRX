@@ -11,7 +11,7 @@ Supports combinations of:
 -WPF Keys, listed at [System.Windows.Input  Key Enum](https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.key?view=windowsdesktop-8.0).
 
 
-## Sample usage
+##  Usage
 import
 ```
   using GlobalHotKeysRX;
