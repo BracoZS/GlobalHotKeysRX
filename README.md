@@ -24,6 +24,9 @@ initialization
 
   HotKeys hks = new HotKeys();
 ```
+> *Use the | operator to combine/add modifiers
+
+
 adding a hotkey
 ```
   hks.AddMethod(combo1, myfunction);     
@@ -39,6 +42,10 @@ removing
 ```
 ```
   hks.ClearAll();    //all
+```
+cleaning up resources
+```
+  hks.Dispose();
 ```
 simplest way
 ```
