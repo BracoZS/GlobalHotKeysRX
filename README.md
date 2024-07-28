@@ -1,5 +1,5 @@
 # GlobalHotKeysRX
-A WPF C# library to create global keyboard shortcuts. It allows you to implement keyboard shortcuts globally in your applications. With this library, you can implement keyboard shortcuts to perform specific actions in your applications, regardless of the active window.
+A small C# WPF library to create global keyboard shortcuts. It allows you to implement keyboard shortcuts globally in your applications. With this library, you can implement keyboard shortcuts to perform specific actions in your applications, regardless of the active window.
 Works globally, allowing the activation of shortcuts on any window.
 
 *No Window is required, so you can use it in windowless applications.
@@ -19,8 +19,8 @@ import
 
 initialization
 ```
-  Combo combo1 = new Combo(Modifiers.Alt, Key.C);                          //dual combo
-  Combo combo2 = new Combo(Modifiers.Alt | Modifiers.Control, Key.Z);      //triple combo
+  Combo combo1 = new Combo(Modifiers.Alt, Key.C);                          //dual combo (alt + C)
+  Combo combo2 = new Combo(Modifiers.Alt | Modifiers.Control, Key.Z);      //triple combo (Alt + Control + Z)
 
   HotKeys hks = new HotKeys();
 ```
