@@ -21,14 +21,9 @@ namespace GlobalHotKeysRX
         public Modifiers modifier { get; set; }
         public Key key { get; set; }
 
-        public Combo( Modifiers modifier, Key key )
+        public Combo( Modifiers modifiers, Key key )
         {
-            this.modifier = modifier;
-            this.key = key;
-        }
-        public Combo( Modifiers modifier1, Modifiers modifier2, Key key )
-        {
-            this.modifier = modifier1 | modifier2;
+            this.modifier = modifiers;
             this.key = key;
         }
     }

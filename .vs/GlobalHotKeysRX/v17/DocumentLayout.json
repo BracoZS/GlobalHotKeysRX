@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\Atajos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Atajos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\HotKeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotKeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Joseph\\source\\repos\\GlobalHotkeysRX\\HotKeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -17,7 +17,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,28 +69,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HotKeys.cs",
+              "DocumentMoniker": "C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\HotKeys.cs",
+              "RelativeDocumentMoniker": "HotKeys.cs",
+              "ToolTip": "C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\HotKeys.cs",
+              "RelativeToolTip": "HotKeys.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T17:05:12.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "HotKeys.cs",
               "DocumentMoniker": "C:\\Users\\Joseph\\source\\repos\\GlobalHotkeysRX\\HotKeys.cs",
               "RelativeDocumentMoniker": "..\\..\\GlobalHotkeysRX\\HotKeys.cs",
               "ToolTip": "C:\\Users\\Joseph\\source\\repos\\GlobalHotkeysRX\\HotKeys.cs",
               "RelativeToolTip": "..\\..\\GlobalHotkeysRX\\HotKeys.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-27T22:33:42.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Atajos.cs",
-              "DocumentMoniker": "C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\Atajos.cs",
-              "RelativeDocumentMoniker": "Atajos.cs",
-              "ToolTip": "C:\\Users\\Joseph\\source\\repos\\BracoZS\\GlobalHotKeysRX\\Atajos.cs",
-              "RelativeToolTip": "Atajos.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFAAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T22:33:04.051Z",
               "EditorCaption": ""
             }
           ]
