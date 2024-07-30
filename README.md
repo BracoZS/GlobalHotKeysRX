@@ -10,6 +10,10 @@ Supports combinations of:
 
 -WPF Keys, listed at [System.Windows.Input  Key Enum](https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.key?view=windowsdesktop-8.0).
 
+[NuGet](https://www.nuget.org/packages/GlobalHotkeysRX) package.
+[![GlobalHotkeyRX](https://github.com/user-attachments/assets/645c20ba-3f5c-4c43-aa20-67f99d1bf7e2)](https://www.nuget.org/packages/GlobalHotkeysRX/)
+-
+
 
 ##  Usage
 import
