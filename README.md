@@ -52,6 +52,12 @@ cleaning up resources
 ```
   hks.Dispose();
 ```
+Pause/Play
+```
+  hks.Pause(combo1);    //don´t call the Action
+  //...
+  hks.Play(combo1);    //calls back the Action
+```
 simplest way
 ```
   HotKeys hks = new HotKeys(new Combo(Modifiers.Control, Key.Q), () => { /*code...*/ });
