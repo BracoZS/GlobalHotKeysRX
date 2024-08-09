@@ -23,7 +23,7 @@ import
 
 initialization
 ```
-  Combo combo1 = new Combo(Modifiers.Alt, Key.C);                          //dual combo (alt + C)
+  Combo combo1 = new Combo(Modifiers.Alt, Key.C);                          //dual combo (Alt + C)
   Combo combo2 = new Combo(Modifiers.Alt | Modifiers.Control, Key.Z);      //triple combo (Alt + Control + Z)
 
   HotKeys hks = new HotKeys();
@@ -38,7 +38,7 @@ adding a hotkey
 
   void myfunction()
   {
-     //code when a hotkey occurs...
+     //code when hotkey occurs...
   }
 ```
 removing
@@ -52,11 +52,11 @@ cleaning up resources
 ```
   hks.Dispose();
 ```
-Pause/Play
+pause/play
 ```
-  hks.Pause(combo1);    //don´t call the Action
+  hks.Pause(combo1);    //'Action' is not called
   //...
-  hks.Play(combo1);    //calls back the Action
+  hks.Play(combo1);    //'Action' is called again
 ```
 simplest way
 ```
