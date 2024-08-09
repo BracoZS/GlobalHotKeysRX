@@ -61,13 +61,13 @@ namespace GlobalHotKeysRX
             var vKeyCode = KeyInterop.VirtualKeyFromKey(combo.key);
             bool okRegister = RegisterHotKey(IntPtr.Zero, id, (uint)combo.modifier, (uint)vKeyCode);
 
-            if( okRegister ) { _methods.Add(id, action); };
+            if(okRegister) {_methods.Add(id, action);};
             return okRegister;
         }
         public void Play(Combo c)
         {
             var id = getID(c);
-            if( _pausedMethods.ContainsKey(id) )
+            if(_pausedMethods.ContainsKey(id))
             {
                 _methods[id] = _pausedMethods[id];
             }
@@ -75,9 +75,9 @@ namespace GlobalHotKeysRX
         public void Pause(Combo c)
         {
             var id = getID(c);
-            if( _methods.ContainsKey(id) && _methods[id] != null )
+            if(_methods.ContainsKey(id) && _methods[id] != null)
             {
-                if( _pausedMethods.ContainsKey(id) )
+                if(_pausedMethods.ContainsKey(id))
                 {
                     _pausedMethods[id] = _methods[id];
                 } else
@@ -91,7 +91,7 @@ namespace GlobalHotKeysRX
         {
             bool okDelete = false;
             var id = getID(c);
-            if( _methods.ContainsKey(id) )
+            if(_methods.ContainsKey(id))
             {
                 okDelete = UnregisterHotKey(IntPtr.Zero, id);
                 _methods.Remove(id);
@@ -100,7 +100,7 @@ namespace GlobalHotKeysRX
         }
         public void ClearAll()
         {
-            foreach( var item in _methods )
+            foreach(var item in _methods)
             {
                 UnregisterHotKey(IntPtr.Zero, item.Key);
             }
@@ -108,7 +108,7 @@ namespace GlobalHotKeysRX
         }
         private void OnThreadFilterMessage(ref MSG msg, ref bool handled)
         {
-            if( !handled && msg.message == WM_HOTKEY )
+            if(!handled && msg.message == WM_HOTKEY)
             {
                 var id = msg.wParam.ToInt32();
                 _methods[id]?.Invoke();
@@ -127,9 +127,9 @@ namespace GlobalHotKeysRX
         }
         protected virtual void Dispose(bool disposing)
         {
-            if( !_disposed )
+            if(!_disposed)
             {
-                if( disposing )
+                if(disposing)
                 {
                     ClearAll();
                 }
