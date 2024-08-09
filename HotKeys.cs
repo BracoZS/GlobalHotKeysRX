@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -22,7 +21,7 @@ namespace GlobalHotKeysRX
         public Modifiers modifier { get; set; }
         public Key key { get; set; }
 
-        public Combo( Modifiers modifiers, Key key )
+        public Combo(Modifiers modifiers, Key key)
         {
             this.modifier = modifiers;
             this.key = key;
@@ -35,24 +34,26 @@ namespace GlobalHotKeysRX
         const int WM_HOTKEY = 0x0312;
 
         [DllImport("user32.dll")]
-        static extern bool RegisterHotKey( IntPtr hWnd, int id, uint fsModifiers, uint vk );
+        static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
         [DllImport("user32.dll")]
-        static extern bool UnregisterHotKey( IntPtr hWnd, int id );
+        static extern bool UnregisterHotKey(IntPtr hWnd, int id);
         #endregion
 
         private Dictionary<int, Action> _methods;
+        private Dictionary<int, Action> _pausedMethods;
         public HotKeys()
         {
             ComponentDispatcher.ThreadFilterMessage += new ThreadMessageEventHandler(OnThreadFilterMessage);
             _methods = new Dictionary<int, Action>();
+            _pausedMethods = new Dictionary<int, Action>();
         }
-        public HotKeys(Combo c, Action a):this()     // - :this() - !important
+        public HotKeys(Combo c, Action a) : this()     // - :this() - !important
         {
             AddMethod(c, a);
         }
-        private int getID(Combo c)
+        private int getID(Combo combo)
         {
-            return (int)c.modifier + (int)c.key;     
+            return (int)combo.modifier + (int)combo.key;
         }
         public bool AddMethod(Combo combo, Action action)       //implement exception...
         {
@@ -60,23 +61,46 @@ namespace GlobalHotKeysRX
             var vKeyCode = KeyInterop.VirtualKeyFromKey(combo.key);
             bool okRegister = RegisterHotKey(IntPtr.Zero, id, (uint)combo.modifier, (uint)vKeyCode);
 
-            if (okRegister) {_methods.Add(id, action);};
+            if( okRegister ) { _methods.Add(id, action); };
             return okRegister;
+        }
+        public void Play(Combo c)
+        {
+            var id = getID(c);
+            if( _pausedMethods.ContainsKey(id) )
+            {
+                _methods[id] = _pausedMethods[id];
+            }
+        }
+        public void Pause(Combo c)
+        {
+            var id = getID(c);
+            if( _methods.ContainsKey(id) && _methods[id] != null )
+            {
+                if( _pausedMethods.ContainsKey(id) )
+                {
+                    _pausedMethods[id] = _methods[id];
+                } else
+                {
+                    _pausedMethods.Add(id, _methods[id]);
+                }
+                _methods[id] = null;
+            }
         }
         public bool DeleteMethod(Combo c)
         {
-            bool okDelete = false;     
+            bool okDelete = false;
             var id = getID(c);
-            if (_methods.ContainsKey(id))
+            if( _methods.ContainsKey(id) )
             {
                 okDelete = UnregisterHotKey(IntPtr.Zero, id);
                 _methods.Remove(id);
             }
-            return okDelete;    
+            return okDelete;
         }
         public void ClearAll()
         {
-            foreach (var item in _methods)
+            foreach( var item in _methods )
             {
                 UnregisterHotKey(IntPtr.Zero, item.Key);
             }
@@ -84,10 +108,10 @@ namespace GlobalHotKeysRX
         }
         private void OnThreadFilterMessage(ref MSG msg, ref bool handled)
         {
-            if (!handled && msg.message == WM_HOTKEY)
+            if( !handled && msg.message == WM_HOTKEY )
             {
                 var id = msg.wParam.ToInt32();
-                _methods[id]?.Invoke();     
+                _methods[id]?.Invoke();
 
                 handled = true;
             }
@@ -101,11 +125,11 @@ namespace GlobalHotKeysRX
 
             GC.SuppressFinalize(this);
         }
-        protected virtual void Dispose( bool disposing )
+        protected virtual void Dispose(bool disposing)
         {
-            if(!_disposed)
+            if( !_disposed )
             {
-                if(disposing)
+                if( disposing )
                 {
                     ClearAll();
                 }
@@ -115,5 +139,5 @@ namespace GlobalHotKeysRX
         }
         #endregion
     }
-    
+
 }
