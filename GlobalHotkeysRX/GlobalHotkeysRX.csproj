@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net40;net8.0-windows</TargetFrameworks>
+	  
+	  <Title>GlobalHotkeysRX</Title>
+	  <Authors>BracoZS</Authors>
+	  <PackageProjectUrl>https://github.com/BracoZS/GlobalHotKeysRX</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/BracoZS/GlobalHotKeysRX</RepositoryUrl>
+	  <PackageTags>C#; global; hotkey; system-wide; background; desktop; system try app; </PackageTags>
+	  <ApplicationIcon>Images\GlobalHotkeyRX.ico</ApplicationIcon>
+	  <PackageIcon>GlobalHotkeyRX.png</PackageIcon>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	  <Description>Simple C# library for creating system-wide hotkeys. It allows you to implement keyboard shortcuts to perform specific actions in your application, regardless of the active window. You can use it in background/windowless applications.
+
+It supports combinations of:
+
+-Modifier keys: Alt, Control, Shift, Win (up to 3 at a time).
+
+-Keys, listed at Virtual-Key Codes.
+	  </Description>
+	  <AssemblyVersion>2.0.0.0</AssemblyVersion>
+	  <FileVersion>2.0.0.0</FileVersion>
+	  <Copyright>BracoZS</Copyright>
+	  <Version>2.0.0</Version>
+	  <PackageReleaseNotes>Now supports Winforms </PackageReleaseNotes>
+	  <NeutralLanguage>en</NeutralLanguage>
+	  <EnableNETAnalyzers>True</EnableNETAnalyzers>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-windows'">
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+	
+
+  <ItemGroup>
+    <None Remove="Images\GlobalHotkeyRX.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\GlobalHotkeyRX.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\GlobalHotkeyRX.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="E:\Devs\Dev common\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+</Project>
