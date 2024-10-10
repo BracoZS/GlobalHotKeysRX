@@ -15,7 +15,7 @@ namespace GlobalHotkeysRX
             Action = action;
 
             // concatenates 2 numbers with the format num1909num2.
-            // 99 in the middle is used as separator to avoid posible duplicates
+            // 909 in the middle is used as separator to avoid posible duplicates
             ID = int.Parse($"{(int)modifiers}909{(int)key}");        
         }
     }
