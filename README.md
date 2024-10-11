@@ -30,9 +30,9 @@ GlobalHotkeys appHotkeys = new GlobalHotkeys(
 );
 
 ```
-> *Use the  `|`  operator to combine/add modifiers.
+> *Use the  `|`  operator to combine/add modifiers. For example, combine `Control` + `Alt` to get `AtlGr`
 >
-> `new Hotkey(Modifier.Shift | Modifier.Alt, VKey.P, myFunction)`
+> `new Hotkey(Modifier.Control | Modifier.Alt, VKey.P, myFunction)  // AltGr + P`
 > 
 > *By using 'Modifiers.NoRepeat' with another modifier, the application will only receive another WM_HOTKEY message when the key is released and then pressed again while a modifier is held down.
 >
@@ -55,7 +55,7 @@ GlobalHotkeys appHotkeys = new GlobalHotkeys(
 > protected override void WndProc(ref Message m)
 >{
 >    if(m.Msg == WinApi.WM_HOTKEY)
->        appHotkeys.OnWinFormMesssage(m);
+>        appHotkeys.OnWinFormMessage(m);  // Replace by your own instance name
 >
 >    // (Optional) Stops any default or additional processing of the message.
 >    m.Result = (IntPtr)1;
@@ -78,7 +78,7 @@ void myFunction()
     // code when a hotkey occurs...
 }
 ```
-removing
+Removing
 ```
 appHotkeys.Remove(Modifier.Shift, VKey.Z);
 
@@ -97,6 +97,10 @@ public void AppHotkeys_HotkeyPressed(object sender, HotkeyEventArgs e)
 Cleaning up resources
 ```
 appHotkeys.Dispose();
+```
+Simplest way 🙂 (wpf)
+```
+GlobalHotkeys ghk = new GlobalHotkeys(new Hotkey(Modifier.Shift, VKey.V, () => { /*code*/ }));
 ```
 
 ### Known issues
