@@ -15,23 +15,22 @@ namespace GlobalHotkeysRX
 
         public IntPtr ClientHandle { get; set; }
 
-        public GlobalHotkeys(IntPtr handle = default)
-        {
-            ClientHandle = handle;
-
-            if(IsWPF())
-                ComponentDispatcher.ThreadFilterMessage += OnthreadFilterMessage;
-        }
         /// <summary>
         /// Accepts any number of parameters of type Hotkey.
         /// </summary>
-        public GlobalHotkeys(IntPtr handle = default, params Hotkey[] hotKey) : this(handle)
+        public GlobalHotkeys(IntPtr handle = default, params Hotkey[] hotKey) 
         {
+            ClientHandle = handle;
+
             foreach(var htk in hotKey)
             {
                 Add(htk);
             }
+
+            if(IsWPF())
+                ComponentDispatcher.ThreadFilterMessage += OnthreadFilterMessage;
         }
+        public GlobalHotkeys(params Hotkey[] hotKeys) : this(default, hotKeys) { }
 
         public bool Add(Hotkey hotKey)
         {
