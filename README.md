@@ -9,6 +9,7 @@ It supports combinations of:
 
 -Keys, listed at [Virtual-Key Codes](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
+## [Nuget Package](https://www.nuget.org/packages/GlobalHotkeysRX) <a href="https://www.nuget.org/packages/GlobalHotkeysRX"><img src="https://api.nuget.org/v3-flatcontainer/globalhotkeysrx/2.0.0/icon" width="32" height="32"/></a>
 
 ##  Usage
 
