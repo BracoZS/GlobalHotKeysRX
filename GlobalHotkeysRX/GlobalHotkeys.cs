@@ -85,7 +85,7 @@ namespace GlobalHotkeysRX
         ///     <para><b>Note:</b>This function has been specifically created for Windows Forms environments.</para>
         /// </remarks> 
         /// </summary>  
-        public void OnWinFormMesssage(object msg)
+        public void OnWinFormMessage(object msg)
         {
             var wParam = msg.GetType().GetProperty("WParam").GetValue(msg, null);       // WParam
 
