@@ -71,7 +71,7 @@ Adding a hotkey after initialization
 appHotkeys.Add(Modifier.Win, VKey.NUM_0);
 
 // or
-var htk = new Hotkey(Modifier.Win, VKey.NUM_0, myFuntion);
+var htk = new Hotkey(Modifier.Win, VKey.NUM_0, myFunction);
 appHotkeys.Add(htk);   
 
 void myFunction()
